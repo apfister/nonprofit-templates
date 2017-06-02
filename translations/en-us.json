@@ -1,0 +1,11 @@
+{
+  "header" : {
+    "title" : "Non-Profit Templates",
+    "signIn" : "Sign In",
+    "signOut" : "Sign Out",
+    "settings" : "Settings"
+  },
+  "home" : {
+    "btnCreateLabel": "Create Annual Report Story Map"
+  }
+}

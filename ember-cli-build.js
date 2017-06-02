@@ -1,10 +1,17 @@
 /*jshint node:true*/
 /* global require, module */
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const Funnel = require('broccoli-funnel');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
+    sassOptions: {
+      includePaths: [
+        'node_modules/bootstrap-sass/assets/stylesheets',
+        'node_modules/calcite-bootstrap/dist/sass'
+      ]
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -20,5 +27,22 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  return app.toTree();
+  app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js');
+  app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js');
+  app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js');
+  app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js');
+  app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js');
+  app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js');
+
+  // bootstrap-select
+  app.import('bower_components/bootstrap-select/dist/js/bootstrap-select.js');
+
+  // although app.import can't pull from node_modules, Funnel can
+  const extraAssets = new Funnel('node_modules/bootstrap-sass/assets/fonts/bootstrap', {
+    srcDir: '/',
+    include: ['**.*'],
+    destDir: '/assets/fonts',
+  });
+
+  return app.toTree( extraAssets );
 };

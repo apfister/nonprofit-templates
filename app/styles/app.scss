@@ -1,0 +1,106 @@
+
+$icon-font-path: '../assets/fonts/';
+
+$Calcite_Gray_050:   #ffffff;
+$Calcite_Gray_700:   #323232;
+
+/*$primary-font-sanserif:  'Avenir Next W01', 'Avenir Next', 'Avenir';
+$primary-font-serif: 'Kepler W01';
+$primary-headings-weight: 300;*/
+
+/*@import 'calcite-bootstrap';*/
+@import 'components/calcite-bootstrap';
+
+$icon-font-path: '../assets/fonts/';
+
+@import "bootstrap";
+/*
+@import 'calcite/_colors-default';
+@import 'calcite/_variables';
+*/
+
+
+@import 'header';
+@import 'signin';
+// @import 'item-display';
+// @import 'item-details';
+// @import 'placeholder-image';
+
+[data-ember-action] {
+  cursor: pointer;
+}
+
+[role="tabpanel"][aria-hidden="true"] {
+  display: none;
+}
+
+body,
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  // font-family: "Open Sans",Arial, sans-serif;
+}
+
+hr {
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+.no-marg-left {
+  margin-left: 0;
+}
+
+.marg-top-20 {
+  margin-top: 20px;
+}
+
+.marg-top-50 {
+  margin-top: 50px;
+}
+
+/*nav bar*/
+.top-header {
+  /*margin-left: 15px;
+  margin-right: auto;*/
+}
+.navbar {
+  min-height: 50px;
+}
+.navbar-brand {
+  padding: 5px 15px;
+}
+
+@media (min-width:768px) {
+  .container {
+    /*width: 760px;*/
+    width: 95%;
+    /*padding-left: 0;*/
+    // padding-right: 0;
+    margin-left: 10px;
+    /*margin-right: 10px;*/
+  }
+}
+
+.brand-logo {
+  height: 70px;
+  width: 70px;
+}
+
+.sit-on-top {
+  z-index: 1;
+}
+
+.group-thumbnail {
+  height: 64px !important;
+  max-height: 65px;
+  max-width: 65px;
+}
+
+.search-select {
+  display: inline-block;
+  color: #6e6e6e;
+}
+
+.group-header {
+  background: url('images/bg-map-contour-dark.png');
+  height: 125px;
+  color: white;
+}

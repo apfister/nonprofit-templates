@@ -4,8 +4,22 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'nonprofit-templates',
     environment: environment,
-    rootURL: '/',
+    rootURL: '/nonprofit-templates/',
     locationType: 'auto',
+
+    torii: {
+      sessionServiceName: 'session',
+      providers: {
+        'arcgis-oauth-bearer': {
+          apiKey: 'arcgisonline',
+          portalUrl: 'https://www.arcgis.com',
+          remoteServiceName: 'iframe',
+          display: 'iframe',
+          showSocialLogins: false
+        }
+      }
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -20,6 +34,13 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+
+      portalBaseUrl: 'https://www.arcgis.com',
+      arcgisPortal: {
+        domain: 'arcgis.com',
+        env: 'www',
+        maps: 'maps'
+      }
     }
   };
 
@@ -43,7 +64,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.rootURL = '/nonprofit-templates/';
+    ENV.locationType = 'hash';
   }
 
   return ENV;
