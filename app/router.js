@@ -8,7 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('signin');
-  this.route('home');
+  this.route('home', { path: '/'} );
   this.route('create-annual-report');
 });
 
